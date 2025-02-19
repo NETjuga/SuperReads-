@@ -1,0 +1,23 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Specific to web project
+node_modules/
+.env
