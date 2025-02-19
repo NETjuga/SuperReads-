@@ -1,0 +1,492 @@
+/* Update headings to use Lacquer font */
+h1, h2, h3, .lacquer-regular {
+    font-family: "Lacquer", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Update headings to use Roboto Condensed */
+h1, h2, h3, .lacquer-regular {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Update paragraphs and other text to use Roboto Condensed */
+p, span, a, input, textarea, button {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* The rest of your existing CSS remains the same */
+
+
+:root {
+    --primary-color: #019e40;
+    --secondary-color: #2ecc71;
+    --background-color: #e7e7e7;
+    --text-color: #333;
+    --white: #ffffff;
+    --gray: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(-45deg, #ffffff, #f4f6f9, #f1f1f1, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+/* Update the logo class */
+.navbar .logo {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+/* Hero Section */
+/* Hero Section */
+/* Hero Section Modifications */
+.hero {
+    height: 70vh;
+    position: relative; /* Important for positioning overlay */
+    display: flex;
+
+/* Update section titles */
+.section-title {
+    font-family: "Roboto Condensed", sans-serif;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}    align-items: center;
+    background-image: url('/images/matriex.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to improve text readability */
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2;
+}
+
+/* Adjust text colors for better visibility on image background */
+.hero h1, 
+.hero .subtitle, 
+.hero .social-icon {
+    color: var(--white); /* Ensure visibility on background image */
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px; /* Slightly smaller padding */
+    background-color: var(--white);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem; /* Slightly smaller text */
+    transition: all 0.3s ease;
+    margin-top: 0.5rem; /* Added small margin */
+}
+
+
+.cta-button:hover {
+    background-color: var(--gray);
+    transform: translateY(-3px);
+}
+
+/* Section Styles */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+/* About Section */
+.about, .projects, .skills, .contact {
+    padding: 6rem 0;
+    background-color: var(--background-color);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    width: 100%;
+}
+
+.achievements {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.achievement-item {
+    text-align: center;
+}
+.achievement-item h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card:nth-child(3) {
+    grid-column: 1 / span 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--gray);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+.project-image img {
+    width: 100%;
+    height: 250px;  /* Reduced from 350px */
+    object-fit: contain;  /* Changed from 'cover' to 'contain' */
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 5px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skill-logo {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px; /* Increased from 150px */
+    padding: 1.5rem; /* Increased from 1rem */
+    background-color: var(--gray);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.skill-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px rgba(1, 158, 64, 0.3);
+    border: 1px solid var(--primary-color);
+}
+.skill-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+.skill-logo {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 0.5rem; /* Reduced from 1rem */
+    object-fit: contain;
+}
+
+.skill-item span {
+    font-size: 1.2rem;
+    margin: 0.4rem 0; /* Reduced from 0.8rem */
+    font-weight: 500;
+}
+
+.skill-rating {
+    margin-top: 0.5rem; /* Reduced from 1rem */
+}
+.skill-rating i {
+    font-size: 1.2rem; /* Increased from 0.8rem */
+    margin: 0 2px; /* Increased spacing between stars */
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px; /* Increased from 12px */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly larger radius */
+    font-size: 1.1rem; /* Larger text */
+}
+
+.contact-form textarea {
+    height: 200px; /* Increased from 150px */
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 18px; /* Increased from 12px */
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem; /* Larger text */
+    font-weight: 600;
+}
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    color: var(--white);
+    margin: 0 15px; /* Increased margin for more spacing */
+    font-size: 2.5rem; /* Increased icon size */
+    transition: all 0.3s ease;
+}
+
+/* Specific colors for each social media platform on hover */
+.social-icon:hover {
+    transform: scale(1.2); /* Slight scale increase on hover */
+}
+
+.social-icon:hover .fa-linkedin {
+    color: #0077B5; /* LinkedIn blue */
+}
+
+.social-icon:hover .fa-github {
+    color: #333; /* GitHub dark gray */
+}
+
+.social-icon:hover .fa-twitter {
+    color: #1DA1F2; /* Twitter blue */
+}
+
+.social-icon:hover .fa-instagram {
+    color: #E1306C; /* Instagram pink-red */
+}
+
+.social-icon:hover .fa-facebook {
+    color: #3B5998; /* Facebook blue */
+}
+
+.social-icon .fa-x-twitter {
+    color: white; /* Ensure it's visible on your background */
+    font-size: 2.5rem; /* Match other icon sizes */
+}
+
+.social-icon:hover .fa-x-twitter {
+    color: black; /* Hover color */
+}
+
+.about-text p {
+    font-size: 1.25rem; /* Makes the text 25% larger than default */
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.skill-rating {
+    margin-top: 0.5rem;
+}
+
+.skill-rating i {
+    color: #ffd700;
+    font-size: 0.8rem;
+    margin: 0 1px;
+}
+
+.fa-star-half-alt {
+    position: relative;
+    z-index: 1;
+}
+
+.skill-rating {
+    margin-top: 0.5rem;
+}
+
+.skill-rating i {
+    color: #ffd700;
+    font-size: 0.8rem;
+    margin: 0 1px;
+}
+
+.fa-star-half-alt {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(1, 158, 64, 0.3); /* Using primary-color with transparency */
+    border-color: var(--primary-color);
+}

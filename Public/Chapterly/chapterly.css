@@ -1,0 +1,440 @@
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+/* Hero Section */
+.chapterly-hero {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.title-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Reduced from 2rem to bring elements closer */
+}
+
+.logo-container {
+  width: 150px; /* Reduced from 250px */
+  height: 150px; /* Reduced from 250px */
+}
+
+.chapterly-hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 2.6rem; /* Added to move title slightly lower */
+  margin-left: -35px;
+}
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.chapterly-hero {
+  padding-top: 100px; /* Reduced from 120px */
+  text-align: center;
+}
+
+.chapterly-hero h1 {
+    font-size: 4rem; /* Keeping the original size */
+    font-weight: 700;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.apple-brutalist-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 180px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: 3px solid #fff;
+  outline: 3px solid #000;
+  box-shadow: 6px 6px 0 #A2AAAD;
+  transition: all 0.1s ease-out;
+  padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem; /* Added smaller top margin */
+  margin-left: 888px;
+}
+
+.apple-brutalist-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  z-index: 1;
+  transition: none;
+  opacity: 0;
+}
+
+.apple-brutalist-button:hover::before {
+  opacity: 1;
+  animation: slide 2s infinite;
+}
+
+.app-showcase {
+    padding: 2rem 0; /* Reduced from 4rem */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.showcase-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Reduced from larger gap */
+    flex-direction: column;
+}
+
+.about-section {
+    padding: 4rem 0; /* Reduced from 6rem */
+    background-color: var(--background-color);
+    margin-top: 1rem; /* Reduced from 2rem */
+}.apple-brutalist-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #000;
+}
+
+.apple-brutalist-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0 #A2AAAD;
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.apple-logo {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+  fill: white;
+}
+
+.apple-brutalist-button:hover .apple-logo {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.apple-brutalist-button:active .apple-logo {
+  transform: rotate(10deg) scale(0.9);
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.apple-brutalist-button:hover .button-text {
+  transform: skew(-5deg);
+}
+
+.apple-brutalist-button:active .button-text {
+  transform: skew(5deg);
+}
+
+.button-text span:first-child {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.button-text span:last-child {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.app-showcase {
+    padding: 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.showcase-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Reduced gap between text and image */
+    flex-direction: column-reverse; /* This will put text on top */
+}
+
+.showcase-text {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem; /* Add some space between text and image */
+}
+
+.showcase-image {
+    flex: 1;
+    position: relative;
+    height: 800px;
+    width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+.showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from cover to contain */
+    transition: opacity 0.3s ease;
+}
+.showcase-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column; /* Changed to column to stack elements vertically */
+}
+
+.showcase-text {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem; /* Add space between text and image */
+}
+.showcase-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.showcase-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+.showcase-nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-dot.active {
+    background-color: var(--primary-color);
+}
+
+.showcase-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.cta svg {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.cta:hover svg {
+    transform: translateX(3px);
+}
+
+.prev-btn:hover svg {
+    transform: translateX(-3px);
+}
+
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--background-color);
+    margin-top: 2rem;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.about-title span {
+    color: var(--primary-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.description-container {
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    padding: 2.5rem;
+    border-radius: 10px;
+}
+
+.description-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.description-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.description-container ul {
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+.description-container ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.description-container ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+.notification-preview {
+    width: 600px;
+    height: 140px;
+    margin: 1rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 4rem;
+    background-color: (--background-color);
+    
+}
+
+.notification-preview:hover {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+.notification-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-section {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+    margin-top: -4rem; /* Reduced from 2rem */
+}
+
+.notification-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
