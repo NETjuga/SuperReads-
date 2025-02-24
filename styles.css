@@ -141,7 +141,7 @@ body {
     color: var(--primary-color);
     font-weight: 700;
 }    align-items: center;
-    background-image: url('/images/matriex.png'); /* Replace with your image path */
+    background-image: url('images/matriex.png'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     color: var(--white);
