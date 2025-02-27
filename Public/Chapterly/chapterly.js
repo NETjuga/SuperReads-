@@ -1,21 +1,21 @@
 const showcaseData = [
     {
-        image: '/images/ChapSS1.jpg',
+        image: 'images/ChapSS1.jpg',
         title: 'Your Personal Library',
         description: 'Keep track of all your books in one place. Organize your reading list, mark favorites, and set reading goals with our intuitive interface.'
     },
     {
-        image: '/images/ChapSS3.jpg',
+        image: 'images/ChapSS3.jpg',
         title: 'Track Your Reading',
         description: 'Monitor your reading pace, set chapter goals, and maintain a consistent reading schedule. Stay motivated with progress insights and reading streaks.'
     },
     {
-        image: '/images/ChapSS2.jpg',
+        image: 'images/ChapSS2.jpg',
         title: 'Find New Books to Read',
         description: 'Discover your next favorite book through personalized recommendations. Explore new genres, authors, and trending titles based on your reading preferences.'
     },
     {
-        image: '/images/ChapSS4.jpg',
+        image: 'images/ChapSS4.jpg',
         title: 'Capture Your Thoughts',
         description: 'Add personal notes and reflections for each book. Highlight memorable quotes, write chapter summaries, and keep track of your insights as you read.'
     }
