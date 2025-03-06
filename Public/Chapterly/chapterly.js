@@ -1,6 +1,6 @@
 const showcaseData = [
     {
-        image: 'images/ChapSS1.jpg',
+        image: '/SuperReads-/images/ChapSS1.jpg',
         title: 'Your Personal Library',
         description: 'Keep track of all your books in one place. Organize your reading list, mark favorites, and set reading goals with our intuitive interface.'
     },
