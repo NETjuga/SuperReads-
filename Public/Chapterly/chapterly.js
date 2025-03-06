@@ -1,25 +1,27 @@
 const showcaseData = [
     {
-        image: '../images/ChapSS1.jpg',
+        image: 'images/ChapSS1.jpg',
         title: 'Your Personal Library',
         description: 'Keep track of all your books in one place. Organize your reading list, mark favorites, and set reading goals with our intuitive interface.'
     },
     {
-        image: '../images/ChapSS3.jpg',
+        image: 'images/ChapSS3.jpg',
         title: 'Track Your Reading',
         description: 'Monitor your reading pace, set chapter goals, and maintain a consistent reading schedule. Stay motivated with progress insights and reading streaks.'
     },
     {
-        image: '../images/ChapSS2.jpg',
+        image: 'images/ChapSS2.jpg',
         title: 'Find New Books to Read',
         description: 'Discover your next favorite book through personalized recommendations. Explore new genres, authors, and trending titles based on your reading preferences.'
     },
     {
-        image: '../images/ChapSS4.jpg',
+        image: 'images/ChapSS4.jpg',
         title: 'Capture Your Thoughts',
         description: 'Add personal notes and reflections for each book. Highlight memorable quotes, write chapter summaries, and keep track of your insights as you read.'
     }
-];let currentSlide = 0;
+];
+
+let currentSlide = 0;
 
 function updateShowcase() {
     const image = document.querySelector('.showcase-image img');
@@ -47,7 +49,6 @@ document.querySelectorAll('.nav-dot').forEach((dot, index) => {
     });
 });
 
-// Add these functions after your existing code
 function nextSlide() {
     currentSlide = (currentSlide + 1) % showcaseData.length;
     updateShowcase();
@@ -58,9 +59,43 @@ function previousSlide() {
     updateShowcase();
 }
 
-// Add this at the start of your JavaScript file
+// Comprehensive Image Loading Debugging
 document.addEventListener('DOMContentLoaded', () => {
-    updateShowcase(); // Initialize first slide
+    // Debug current page context
+    console.log('Current Page URL:', window.location.href);
+    console.log('Current Origin:', window.location.origin);
+    console.log('Current Pathname:', window.location.pathname);
+
+    // Log image paths before loading
+    showcaseData.forEach((item, index) => {
+        console.group(`Image ${index + 1} Debug`);
+        console.log('Original Image Path:', item.image);
+        
+        // Try multiple path variations
+        const pathVariations = [
+            item.image,
+            `/${item.image}`,
+            `../images/${item.image.split('/').pop()}`,
+            `/SuperReads-/images/${item.image.split('/').pop()}`
+        ];
+
+        pathVariations.forEach(path => {
+            const img = new Image();
+            img.onload = () => {
+                console.log(`✅ Image loaded successfully with path: ${path}`);
+            };
+            img.onerror = (error) => {
+                console.error(`❌ Failed to load image with path: ${path}`);
+                console.error('Error details:', error);
+            };
+            img.src = path;
+        });
+        
+        console.groupEnd();
+    });
+
+    // Initialize first slide
+    updateShowcase();
     
     // Add event listeners for navigation
     document.querySelector('.next-btn').addEventListener('click', nextSlide);
