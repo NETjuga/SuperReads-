@@ -31,7 +31,17 @@ function updateShowcase() {
 
     image.style.opacity = '0';
     setTimeout(() => {
-        image.src = showcaseData[currentSlide].image;
+        const newImageSrc = showcaseData[currentSlide].image;
+        
+        // Enhanced error tracking
+        image.onerror = (error) => {
+            console.error(`❌ Failed to load image: ${newImageSrc}`);
+            console.error('Error details:', error);
+            console.log('Current Slide:', currentSlide);
+            console.log('Full Showcase Data:', showcaseData[currentSlide]);
+        };
+
+        image.src = newImageSrc;
         title.textContent = showcaseData[currentSlide].title;
         description.textContent = showcaseData[currentSlide].description;
         image.style.opacity = '1';
@@ -41,7 +51,6 @@ function updateShowcase() {
         });
     }, 300);
 }
-
 document.querySelectorAll('.nav-dot').forEach((dot, index) => {
     dot.addEventListener('click', () => {
         currentSlide = index;
