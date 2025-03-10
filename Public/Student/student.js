@@ -1,21 +1,20 @@
 const showcaseData = [
     {
-        image: '/SuperReads-/Student/STIMG/Matchdash.jpg',
+        image: '/SuperReads-/images/Matchdash.jpg',  // Updated path
         title: 'See what career is best for you',
         description: 'Discover your ideal career path through personality assessment and AI-driven recommendations.'
     },
     {
-        image: '/SuperReads-/Student/STIMG/IndTrends.png',
+        image: '/SuperReads-/images/IndTrends.png',  // Updated path
         title: 'Get industry Insights',
         description: 'Get detailed insights about different industries to understand and get knowledge about various jobs.'
     },
     {
-        image: '/SuperReads-/Student/STIMG/Oppo.jpg',
+        image: '/SuperReads-/images/Oppo.jpg',  // Updated path
         title: 'Opportunity finder',
         description: 'find networking, internship, apprentiship and job opportunities in your area and across the country, with regular updates.'
     }
 ];
-
 let currentSlide = 0;
 
 function updateShowcase() {
