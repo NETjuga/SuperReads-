@@ -13,10 +13,14 @@ const showcaseData = [
         image: '/SuperReads-/images/Oppo.jpg',  // Updated path
         title: 'Opportunity finder',
         description: 'find networking, internship, apprentiship and job opportunities in your area and across the country, with regular updates.'
+    },
+    {
+        image: '/SuperReads-/images/SWGPTFOM.png',  // New custom GPT AI image
+        title: 'Academic AI Assistant',
+        description: 'Access our custom-made GPT AI designed to help with academic tasks including coding, research, and study assistance.'
     }
 ];
 let currentSlide = 0;
-
 function updateShowcase() {
     const image = document.querySelector('.showcase-image img');
     const title = document.querySelector('.showcase-text h2');
