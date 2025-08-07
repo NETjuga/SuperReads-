@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/SuperReads-/", // ✅ This is the GitHub repo name (case-sensitive, with slashes)
+  base: "SuperReads-", // ✅ This is the GitHub repo name (case-sensitive, with slashes)
   server: {
     host: "::",
     port: 8080,
