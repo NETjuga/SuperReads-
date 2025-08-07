@@ -1,0 +1,27 @@
+/* Alliance Font Setup - Will be loaded via Google Fonts as fallback */
+/* Original Alliance fonts would go here if available */
+
+/* Google Fonts fallback for Alliance-like typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Custom font declarations for Alliance (if available) */
+@font-face {
+  font-family: 'Alliance';
+  src: url('fonts/AllianceNo2-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance';
+  src: url('fonts/AllianceNo2-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance';
+  src: url('fonts/AllianceNo2-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
