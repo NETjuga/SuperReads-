@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Palantir-inspired Intelligence Systems Design System */
+/* All colors MUST be HSL */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* === Sleek Professional Theme === */
+    --background: 0 0% 8%;               /* Deep black */
+    --foreground: 0 0% 92%;              /* Soft white */
+
+    /* === Surface & Cards === */
+    --card: 0 0% 12%;                    /* Dark grey cards */
+    --card-foreground: 0 0% 88%;         
+    --card-border: 0 0% 20%;             /* Subtle grey border */
+
+    /* === Interactive Elements === */
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 90%;
+
+    /* === Primary Monochrome === */
+    --primary: 0 0% 100%;                /* Pure white */
+    --primary-foreground: 0 0% 8%;       /* Black text on white */
+    --primary-glow: 0 0% 85%;            /* Light grey glow */
+    --primary-dark: 0 0% 60%;            /* Medium grey */
+
+    /* === Secondary Greys === */
+    --secondary: 0 0% 16%;               /* Dark grey */
+    --secondary-foreground: 0 0% 80%;
+    --secondary-light: 0 0% 24%;         /* Lighter grey */
+
+    /* === Muted Elements === */
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+
+    /* === Accent Systems === */
+    --accent: 0 0% 70%;                  /* Light grey accent */
+    --accent-foreground: 0 0% 8%;
+    --accent-glow: 0 0% 85%;
+
+    /* === Status Colors === */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 120 20% 60%;              /* Muted green */
+    --success-foreground: 0 0% 98%;
+    --warning: 45 30% 65%;               /* Muted amber */
+    --warning-foreground: 0 0% 8%;
+
+    /* === Interface Elements === */
+    --border: 0 0% 18%;                  /* Subtle grey borders */
+    --input: 0 0% 14%;
+    --ring: 0 0% 60%;                    /* Focus rings */
+
+    /* === Gradients === */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 16%));
+    --gradient-tactical: linear-gradient(180deg, hsl(0 0% 12%), hsl(0 0% 8%));
+    --gradient-glow: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 85%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 70%), hsl(0 0% 85%));
+
+    /* === Shadows & Glows === */
+    --shadow-tactical: 0 4px 20px -2px hsl(0 0% 4% / 0.8);
+    --shadow-glow: 0 0 30px hsl(0 0% 100% / 0.1);
+    --shadow-accent-glow: 0 0 20px hsl(0 0% 70% / 0.2);
+
+    /* === Typography === */
+    --font-alliance: 'Alliance', 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+
+    /* === Animations === */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-tactical: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* === Spacing === */
+    --radius: 0.375rem;
+    --radius-lg: 0.75rem;
+    --radius-tactical: 0.5rem;
+
+    /* === Sidebar (for potential future use) === */
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 0% 60%;
+  }
+
+  /* Light mode for special contexts */
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-alliance antialiased overflow-x-hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Tactical scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+}
+
+@layer components {
+  /* === Tactical Animation Keyframes === */
+  @keyframes tactical-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes tactical-slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes tactical-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intelligence-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+    }
+  }
+
+  @keyframes tactical-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* === Tactical UI Components === */
+  .tactical-card {
+    @apply bg-card border border-border rounded-tactical p-6;
+    @apply backdrop-blur-sm relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+    box-shadow: var(--shadow-tactical);
+    transition: var(--transition-tactical);
+  }
+
+  .tactical-card:hover {
+    @apply border-primary/30;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .tactical-button {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-tactical;
+    @apply bg-primary text-primary-foreground font-medium;
+    @apply transition-all duration-300 relative overflow-hidden;
+    @apply hover:bg-primary/90 active:scale-95;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+  }
+
+  .tactical-button:hover {
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.4);
+    transform: translateY(-1px);
+  }
+
+  .tactical-button-secondary {
+    @apply tactical-button bg-secondary text-secondary-foreground;
+    @apply hover:bg-secondary/80;
+    background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+  }
+
+  .intelligence-grid {
+    @apply grid gap-6 relative;
+    background-image: 
+      linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: -1px -1px;
+  }
+
+  .tactical-input {
+    @apply w-full px-4 py-3 bg-input border border-border rounded-tactical;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+    @apply transition-all duration-300;
+  }
+
+  .tactical-input:focus {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.2);
+  }
+
+  /* === Animation Classes === */
+  .animate-tactical-slide-up {
+    animation: tactical-slide-up 0.6s ease-out;
+  }
+
+  .animate-tactical-slide-right {
+    animation: tactical-slide-right 0.6s ease-out;
+  }
+
+  .animate-tactical-fade-in {
+    animation: tactical-fade-in 0.8s ease-out;
+  }
+
+  .animate-intelligence-glow {
+    animation: intelligence-glow 3s ease-in-out infinite;
+  }
+
+  .animate-tactical-pulse {
+    animation: tactical-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  /* === Text Gradients === */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* === Intersection Observer Animation Triggers === */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
