@@ -77,7 +77,7 @@ const ProjectsSection = () => {
       technologies: ['Shopify', 'E-commerce', 'Design'],
       status: 'LIVE',
       delay: '800ms',
-      route: 'https://pwrout.online',
+      route: 'https://pwrout.store',
       isExternal: true,
     },
   ];
