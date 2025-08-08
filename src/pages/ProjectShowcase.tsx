@@ -1,113 +1,262 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Smartphone, Code, Database } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const ProjectShowcase = () => {
   const [visible, setVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(timeout);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.fade-in-section');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className={`min-h-screen bg-background text-foreground font-alliance px-4 sm:px-8 py-12 transition-opacity duration-1000 ${
+    <div className={cn(
+      "min-h-screen bg-background text-foreground font-alliance transition-opacity duration-1000",
       visible ? "opacity-100" : "opacity-0"
-    }`}>
-      {/* Navigation */}
-      <nav className="mb-8">
-        <ul className="flex space-x-4 text-sm sm:text-base">
-          <li>
-            <Link to="/" className="hover:underline">
-              Home
+    )}>
+      {/* Background tactical grid */}
+      <div className="fixed inset-0 intelligence-grid opacity-5 pointer-events-none" />
+      
+      <div className="relative z-10">
+        {/* Navigation */}
+        <nav className="tactical-nav-bar">
+          <div className="max-w-6xl mx-auto px-4 py-6">
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 tactical-button-secondary text-sm group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+              RETURN TO MAIN
             </Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* Hero */}
-      <section className="text-center mb-16 animate-tactical-fade-in">
-        <div className="flex justify-center items-center space-x-4 mb-4">
-          <img
-            src="/SuperReads-/images/Chapterlylogo.png"
-            alt="Chapterly Logo"
-            className="w-16 h-16 sm:w-20 sm:h-20"
-          />
-          <h1 className="text-4xl sm:text-5xl font-bold text-gradient-primary animate-intelligence-glow">
-            Chapterly
-          </h1>
-        </div>
-        <button className="tactical-button flex items-center justify-center space-x-2 mt-6">
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5Z" />
-          </svg>
-          <div className="text-left">
-            <div className="text-xs">Download on</div>
-            <div className="text-sm font-semibold">App Store</div>
           </div>
-        </button>
-      </section>
+        </nav>
 
-      {/* Features */}
-      <section className="app-showcase mb-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center animate-tactical-slide-up">
-          <div className="space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-semibold">Your Personal Library</h2>
-            <p className="text-muted-foreground">
-              Keep track of all your books in one place. Organize your reading list, mark favorites,
-              and set reading goals with our intuitive interface.
-            </p>
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-lg animate-tactical-slide-right">
-            <img src="/SuperReads-/images/app-screen-1.jpg" alt="App Screen" className="w-full" />
-          </div>
-        </div>
-      </section>
+        <main ref={sectionRef} className="max-w-6xl mx-auto px-4 space-y-20 pb-20">
+          {/* Hero Section */}
+          <section className="pt-20 text-center fade-in-section">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
+                <span className="text-xs font-mono text-success uppercase tracking-wider">
+                  PROJECT ACTIVE
+                </span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold font-alliance text-gradient-primary">
+                CHAPTERLY
+              </h1>
+              
+              <div className="text-lg font-mono text-accent uppercase tracking-wider">
+                LIBRARY PLATFORM • IOS APPLICATION
+              </div>
+              
+              <div className="w-32 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto" />
+              
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Advanced library platform promoting cognitive enhancement through strategic reading protocols and genre discovery algorithms.
+              </p>
+            </div>
+          </section>
 
-      {/* Notifications Visual */}
-      <div className="text-center my-10">
-        <img
-          src="/SuperReads-/images/notiIMAGE.png"
-          alt="Chapterly Notifications"
-          className="mx-auto max-w-sm rounded-lg shadow-md animate-tactical-fade-in"
-        />
-      </div>
+          {/* Media Showcase - Mobile App Layout */}
+          <section className="fade-in-section" style={{ animationDelay: '200ms' }}>
+            <div className="tactical-card p-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold font-alliance text-gradient-primary mb-4">
+                  APPLICATION INTERFACE
+                </h2>
+                <div className="w-16 h-1 bg-accent mx-auto" />
+              </div>
 
-      {/* About Section */}
-      <div className="about-section max-w-4xl mx-auto px-4 sm:px-0 animate-tactical-slide-up">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gradient-accent text-center">About <span>Chapterly</span></h2>
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-xl font-semibold">Project Overview</h3>
-            <p className="text-muted-foreground">
-              Chapterly is a modern all-in-one book/library application designed to enhance your reading experience...
-            </p>
-          </div>
+              {/* Mobile Screenshots Grid */}
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                      <Smartphone className="w-12 h-12 text-muted-foreground mx-auto" />
+                      <p className="text-sm text-muted-foreground">Screenshot 1</p>
+                      <p className="text-xs font-mono text-accent">LIBRARY VIEW</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                      <Smartphone className="w-12 h-12 text-muted-foreground mx-auto" />
+                      <p className="text-sm text-muted-foreground">Screenshot 2</p>
+                      <p className="text-xs font-mono text-accent">READING PROGRESS</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                      <Smartphone className="w-12 h-12 text-muted-foreground mx-auto" />
+                      <p className="text-sm text-muted-foreground">Screenshot 3</p>
+                      <p className="text-xs font-mono text-accent">RECOMMENDATIONS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          <div>
-            <h3 className="text-xl font-semibold">Key Features</h3>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1">
-              <li>Personal Library Management</li>
-              <li>Reading Progress Tracking</li>
-              <li>Notes for insights on different books</li>
-              <li>Reading Statistics and Insights</li>
-              <li>Book Recommendations</li>
-            </ul>
-          </div>
+              {/* Video Demo */}
+              <div className="text-center">
+                <div className="max-w-sm mx-auto">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-3">
+                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
+                        <div className="w-0 h-0 border-l-[8px] border-l-foreground border-y-[6px] border-y-transparent ml-1" />
+                      </div>
+                      <p className="text-sm text-muted-foreground">Demo Video</p>
+                      <p className="text-xs font-mono text-accent">APP WALKTHROUGH</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-          <div>
-            <h3 className="text-xl font-semibold">Technology Stack</h3>
-            <p className="text-muted-foreground">
-              Built using Swift for iOS, with a clean and minimalist interface that prioritizes user experience.
-            </p>
-          </div>
+          {/* Technical Overview */}
+          <section className="fade-in-section" style={{ animationDelay: '400ms' }}>
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Project Details */}
+              <div className="tactical-card space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold font-alliance text-gradient-primary mb-6">
+                    PROJECT SPECIFICATIONS
+                  </h3>
+                  <div className="space-y-6">
+                    <div className="space-y-3">
+                      <div className="text-sm font-mono text-foreground uppercase tracking-wide">
+                        PLATFORM
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Smartphone className="w-4 h-4 text-accent" />
+                        <span className="text-muted-foreground">iOS Native Application</span>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="text-sm font-mono text-foreground uppercase tracking-wide">
+                        DEVELOPMENT STACK
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
+                          Swift
+                        </span>
+                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
+                          UIKit
+                        </span>
+                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
+                          Core Data
+                        </span>
+                      </div>
+                    </div>
 
-          <div>
-            <h3 className="text-xl font-semibold">Future Development</h3>
-            <p className="text-muted-foreground">
-              Upcoming features include social sharing, reading challenges, integration with e-readers, and more.
-            </p>
-          </div>
-        </div>
+                    <div className="space-y-3">
+                      <div className="text-sm font-mono text-foreground uppercase tracking-wide">
+                        STATUS
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-success/10 border border-success/20">
+                        <div className="w-2 h-2 bg-success rounded-full" />
+                        <span className="text-xs font-mono text-success">COMPLETED</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Features */}
+              <div className="tactical-card space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold font-alliance text-gradient-primary mb-6">
+                    CORE FEATURES
+                  </h3>
+                  <div className="space-y-4">
+                    {[
+                      'Personal Library Management',
+                      'Reading Progress Tracking', 
+                      'Book Notes & Insights',
+                      'Reading Statistics Dashboard',
+                      'Intelligent Recommendations',
+                      'Goal Setting & Achievements'
+                    ].map((feature, index) => (
+                      <div key={feature} className="flex items-center gap-3 p-3 rounded border border-border/30">
+                        <div className="w-2 h-2 bg-accent rounded-full" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Future Development */}
+          <section className="fade-in-section" style={{ animationDelay: '600ms' }}>
+            <div className="tactical-card text-center space-y-8">
+              <div>
+                <h3 className="text-3xl font-bold font-alliance text-gradient-primary mb-4">
+                  FUTURE DEVELOPMENT
+                </h3>
+                <div className="w-16 h-1 bg-accent mx-auto mb-6" />
+                <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Upcoming enhancements include social reading features, integration with e-reader platforms, 
+                  advanced analytics, and cross-platform synchronization capabilities.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mx-auto">
+                    <Code className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-mono text-sm uppercase tracking-wide">Social Features</h4>
+                  <p className="text-xs text-muted-foreground">Reading communities and sharing</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto">
+                    <Database className="w-6 h-6 text-accent" />
+                  </div>
+                  <h4 className="font-mono text-sm uppercase tracking-wide">Cloud Sync</h4>
+                  <p className="text-xs text-muted-foreground">Cross-device synchronization</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-lg bg-success/20 flex items-center justify-center mx-auto">
+                    <Smartphone className="w-6 h-6 text-success" />
+                  </div>
+                  <h4 className="font-mono text-sm uppercase tracking-wide">Platform Expansion</h4>
+                  <p className="text-xs text-muted-foreground">Android and web versions</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
       </div>
     </div>
   );
