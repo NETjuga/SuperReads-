@@ -66,7 +66,7 @@ const ProjectsSection = () => {
       technologies: ['Security', 'Analytics', 'Monitoring'],
       status: 'ACTIVE',
       delay: '600ms',
-      route: 'https://footprint.online',
+      route: '',
       isExternal: true,
     },
     {
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
       technologies: ['Shopify', 'E-commerce', 'Design'],
       status: 'LIVE',
       delay: '800ms',
-      route: 'https://pwrout.com',
+      route: 'https://pwrout.online',
       isExternal: true,
     },
   ];
