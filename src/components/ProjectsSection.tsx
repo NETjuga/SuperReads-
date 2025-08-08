@@ -34,6 +34,7 @@ const ProjectsSection = () => {
       status: 'COMPLETED',
       delay: '0ms',
       route: '/ProjectShowcase',
+      isExternal: false,
     },
     {
       title: 'CODESUM',
@@ -44,6 +45,7 @@ const ProjectsSection = () => {
       status: 'LIVE',
       delay: '200ms',
       route: '/CodesumShowcase',
+      isExternal: false,
     },
     {
       title: 'STUDENTWIRE',
@@ -54,8 +56,31 @@ const ProjectsSection = () => {
       status: 'BETA',
       delay: '400ms',
       route: '/StudentShowcase',
+      isExternal: false,
     },
-  ];  
+    {
+      title: 'FOOTPRINT.ONLINE',
+      classification: 'CYBERSECURITY PLATFORM',
+      description:
+        'Comprehensive cybersecurity platform providing advanced threat detection and digital footprint analysis.',
+      technologies: ['Security', 'Analytics', 'Monitoring'],
+      status: 'ACTIVE',
+      delay: '600ms',
+      route: 'https://footprint.online',
+      isExternal: true,
+    },
+    {
+      title: 'PWROUT',
+      classification: 'E-COMMERCE STORE',
+      description:
+        'Shopify-powered store specializing in anime and pop culture themed athletic wear and gym apparel.',
+      technologies: ['Shopify', 'E-commerce', 'Design'],
+      status: 'LIVE',
+      delay: '800ms',
+      route: 'https://pwrout.com',
+      isExternal: true,
+    },
+  ];
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -65,6 +90,8 @@ const ProjectsSection = () => {
         return 'text-primary-glow';
       case 'BETA':
         return 'text-accent';
+      case 'COMPLETED':
+        return 'text-success';
       default:
         return 'text-muted-foreground';
     }
@@ -143,14 +170,20 @@ const ProjectsSection = () => {
 
               {/* Action button */}
               <button
-                onClick={() => navigate(project.route)}
+                onClick={() => {
+                  if (project.isExternal) {
+                    window.open(project.route, '_blank');
+                  } else {
+                    navigate(project.route);
+                  }
+                }}
                 className={cn(
                   'w-full tactical-button-secondary text-sm',
                   'group-hover:bg-primary group-hover:text-primary-foreground',
                   'transition-all duration-300'
                 )}
               >
-                VIEW PROJECT
+                {project.isExternal ? 'VISIT SITE' : 'VIEW PROJECT'}
               </button>
 
               {/* Tactical corner indicators */}
@@ -168,6 +201,81 @@ const ProjectsSection = () => {
             <span className="relative z-10">VIEW ALL PROJECTS</span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
+        </div>
+
+        {/* Current Project Section */}
+        <div className="fade-in-section" style={{ animationDelay: '1000ms' }}>
+          <div className="text-center space-y-6 mb-8">
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
+            <h3 className="text-2xl font-bold font-alliance text-gradient-accent">
+              MY CURRENT PROJECT
+            </h3>
+          </div>
+          
+          {/* VentureLink Card - Horizontal */}
+          <div
+            className="tactical-card group cursor-pointer max-w-4xl mx-auto"
+            onClick={() => navigate('/VentureLinkShowcase')}
+          >
+            <div className="grid md:grid-cols-3 gap-6 items-center">
+              {/* Left: Project Info */}
+              <div className="md:col-span-2 space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl font-bold font-alliance text-gradient-primary">
+                    VENTURELINK
+                  </h3>
+                  <div className={cn(
+                    "px-3 py-1 rounded text-xs font-mono",
+                    "bg-accent/20 border border-accent/30",
+                    "text-accent"
+                  )}>
+                    BUILDING
+                  </div>
+                </div>
+                
+                <div className="text-sm font-mono text-accent uppercase tracking-wider">
+                  STARTUP PLATFORM
+                </div>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  Building an innovative platform that connects founders and teams to investors in a frictionless, 
+                  light-hearted way. Making startup funding accessible and fun while opening doors to countless opportunities.
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {['React Native', 'Node.js', 'AI/ML', 'Blockchain'].map((tech) => (
+                    <span
+                      key={tech}
+                      className={cn(
+                        'px-2 py-1 text-xs font-mono rounded',
+                        'bg-secondary/50 text-secondary-foreground',
+                        'border border-border/30'
+                      )}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Right: Action */}
+              <div className="text-center md:text-right">
+                <button className={cn(
+                  'tactical-button-secondary',
+                  'group-hover:bg-accent group-hover:text-accent-foreground',
+                  'transition-all duration-300'
+                )}>
+                  VIEW ROADMAP
+                </button>
+              </div>
+            </div>
+            
+            {/* Tactical corner indicators */}
+            <div className="absolute top-2 left-2 w-3 h-3 border-l-2 border-t-2 border-accent/30 group-hover:border-accent transition-colors duration-300" />
+            <div className="absolute top-2 right-2 w-3 h-3 border-r-2 border-t-2 border-accent/30 group-hover:border-accent transition-colors duration-300" />
+            <div className="absolute bottom-2 left-2 w-3 h-3 border-l-2 border-b-2 border-primary/30 group-hover:border-primary transition-colors duration-300" />
+            <div className="absolute bottom-2 right-2 w-3 h-3 border-r-2 border-b-2 border-primary/30 group-hover:border-primary transition-colors duration-300" />
+          </div>
         </div>
       </div>
     </section>
