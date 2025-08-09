@@ -27,7 +27,7 @@ const TacticalFooter = () => {
           <div className="space-y-4">
             <h4 className="font-bold text-foreground font-alliance">NAVIGATION</h4>
             <div className="space-y-2 text-sm">
-              {['Home', 'Intel', 'Operations', 'Arsenal', 'Contact'].map((item) => (
+              {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((item) => (
                 <button 
                   key={item}
                   onClick={() => {
