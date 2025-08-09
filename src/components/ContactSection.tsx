@@ -55,7 +55,7 @@ const ContactSection = () => {
       title: 'AVAILABILITY',
       items: [
         { label: 'Response Time', value: '< 24 hours', icon: '⚡' },
-        { label: 'Status', value: 'Available', icon: '🟢' },
+        { label: 'Status', value: 'Probably working', icon: '🟢' },
         { label: 'Work Style', value: 'Remote Friendly', icon: '🌐' }
       ]
     }
@@ -74,7 +74,7 @@ const ContactSection = () => {
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Let's discuss your project ideas and potential collaborations
+            Let's discuss something!
           </p>
         </div>
 
@@ -192,7 +192,6 @@ const ContactSection = () => {
                   <h4 className="font-bold text-accent">SECURITY PROTOCOL</h4>
                   <p className="text-sm text-muted-foreground">
                     All communications are encrypted and processed through secure channels. 
-                    Your operational security is our priority.
                   </p>
                 </div>
               </div>

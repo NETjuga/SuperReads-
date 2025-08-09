@@ -15,11 +15,11 @@ const TacticalFooter = () => {
             </h3>
             <p className="text-muted-foreground text-sm">
               Software Engineer specializing in modern web development 
-              and innovative digital solutions.
+              ,innovative digital solutions and creating things.
             </p>
             <div className="flex items-center gap-2 text-sm font-mono">
               <div className="w-2 h-2 bg-success rounded-full animate-tactical-pulse" />
-              <span className="text-muted-foreground">Available for Projects</span>
+              <span className="text-muted-foreground">Available for Projects and Work</span>
             </div>
           </div>
 
@@ -31,7 +31,7 @@ const TacticalFooter = () => {
                 <button 
                   key={item}
                   onClick={() => {
-                    const element = document.getElementById(item.toLowerCase().replace('intel', 'about').replace('operations', 'projects').replace('arsenal', 'skills'));
+                    const element = document.getElementById(item.toLowerCase().replace('about', 'about').replace('projects', 'projects').replace('skills', 'skills'));
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="block text-muted-foreground hover:text-primary-glow transition-colors duration-300"
@@ -69,10 +69,10 @@ const TacticalFooter = () => {
         )}>
           <div className="text-center md:text-left">
             <p className="text-muted-foreground text-sm font-mono">
-              © 2024 Arslaan Juga. All operations classified.
+              © 2024 Arslaan Juga.
             </p>
             <p className="text-muted-foreground/60 text-xs mt-1">
-              Thanks for visiting the command center :)
+              Thanks for visiting
             </p>
           </div>
 
