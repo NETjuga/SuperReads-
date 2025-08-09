@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Monitor, Code, Cpu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import codesumVid from '../ProjectAssets/CodesumVid.mov';
 
 const CodesumShowcase = () => {
   const [visible, setVisible] = useState(false);
@@ -74,8 +75,23 @@ const CodesumShowcase = () => {
               <div className="w-32 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto" />
               
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Automated code generation and analysis system with real-time documentation and implementation guidance.
+               
+
+                Codesum is an AI powered Prompt Code Generation web application for beginner programmers and for CS students who can utilise the documentation alongside the code for practice.
               </p>
+
+              <a
+  href="https://codesum.onrender.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-4 text-white font-bold relative 
+             after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white
+             after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+             hover:after:scale-x-100"
+>
+  Codesum.online
+</a>
+
             </div>
           </section>
 
@@ -93,26 +109,38 @@ const CodesumShowcase = () => {
               <div className="space-y-8 mb-12">
                 <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                   <div className="text-center space-y-3">
-                    <Monitor className="w-16 h-16 text-muted-foreground mx-auto" />
+                  <img
+                     src="/src/ProjectAssets/CodesumSS1.png"
+                     alt="Code Generation Interface"
+                     className="w-full h-full object-cover"
+                   />
                     <p className="text-lg text-muted-foreground">Code Generation Interface</p>
-                    <p className="text-sm font-mono text-accent">MAIN EDITOR</p>
+                    <p className="text-sm font-mono text-accent">Prompt Editor</p>
                   </div>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <Monitor className="w-12 h-12 text-muted-foreground mx-auto" />
-                      <p className="text-sm text-muted-foreground">Analysis Dashboard</p>
-                      <p className="text-xs font-mono text-accent">CODE ANALYSIS</p>
+                    <img
+                     src="/src/ProjectAssets/CodesumSS2.png"
+                     alt="Code Generation Interface"
+                     className="w-full h-full object-cover"
+                   />
+                      <p className="text-sm text-muted-foreground">Output Dashboard</p>
+                      <p className="text-xs font-mono text-accent">Raw code, Key Functions & Explanation</p>
                     </div>
                   </div>
                   
                   <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <Monitor className="w-12 h-12 text-muted-foreground mx-auto" />
+                    <img
+                     src="/src/ProjectAssets/CodesumSS3.png"
+                     alt="Code Generation Interface"
+                     className="w-full h-full object-cover"
+                   />
                       <p className="text-sm text-muted-foreground">Documentation View</p>
-                      <p className="text-xs font-mono text-accent">AUTO DOCS</p>
+                      <p className="text-xs font-mono text-accent">Codesum Help Guide</p>
                     </div>
                   </div>
                 </div>
@@ -120,18 +148,19 @@ const CodesumShowcase = () => {
 
               {/* Video Demo */}
               <div className="text-center">
-                <div className="max-w-4xl mx-auto">
-                  <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
-                        <div className="w-0 h-0 border-l-[12px] border-l-foreground border-y-[8px] border-y-transparent ml-1" />
-                      </div>
-                      <p className="text-lg text-muted-foreground">Platform Demo</p>
-                      <p className="text-sm font-mono text-accent">CODE GENERATION FLOW</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div className="max-w-4xl mx-auto">
+    <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 overflow-hidden">
+      <video
+        src={codesumVid}
+        controls
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <p className="text-lg text-muted-foreground mt-4">Platform Demo</p>
+    <p className="text-sm font-mono text-accent">Code Generation Flow & User Implementation</p>
+  </div>
+</div>
+
             </div>
           </section>
 
@@ -161,19 +190,19 @@ const CodesumShowcase = () => {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
-                          Python
-                        </span>
-                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
-                          Flask
-                        </span>
-                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
                           OpenAI API
                         </span>
                         <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
                           JavaScript
                         </span>
                         <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
-                          PostgreSQL
+                          TailwindCSS
+                        </span>
+                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
+                          NodeJS
+                        </span>
+                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
+                          AI fine-tuning
                         </span>
                       </div>
                     </div>
@@ -204,7 +233,7 @@ const CodesumShowcase = () => {
                       'Real-time Code Analysis',
                       'Automated Documentation',
                       'Syntax Error Detection',
-                      'Performance Optimization'
+                      'Detailed Code Explanation'
                     ].map((feature, index) => (
                       <div key={feature} className="flex items-center gap-3 p-3 rounded border border-border/30">
                         <div className="w-2 h-2 bg-accent rounded-full" />
@@ -228,6 +257,10 @@ const CodesumShowcase = () => {
                 <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                   Leveraging advanced machine learning models and natural language processing to transform 
                   requirements into production-ready code with comprehensive documentation.
+
+                  Codesum is a project i made to tryout a new style of UI, to get experience with AI and to create something that can actully provide utility to people.
+                  I leveraged advanced machine learning models and lanuage processing to turn a prompt into production-ready code that comes with useful documentation aiding people in learning code or 
+                  students who want to use code for their academic projects, i also created a help guide to help people start coding and creating software. 
                 </p>
               </div>
               

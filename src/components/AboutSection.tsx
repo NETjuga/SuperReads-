@@ -44,19 +44,19 @@ const AboutSection = () => {
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p className="text-lg">
                 I'm <span className="text-primary-glow font-semibold">Arslaan Ahmed</span>, 
-                a software engineer with expertise in full-stack development, 
+                an aspiring professional software engineer, i have 3 years of experience in full-stack development, 
                 entrepreneurship, and modern web technologies.
               </p>
               
               <p>
-                My experience spans successful e-commerce ventures, 
-                innovative software solutions, and creative gaming platforms. 
+                My experience spans 2 successful e-commerce ventures, 
+                up to date software solutions, and i have contributed to game development for fun and for experience. 
                 I've built and deployed systems that solve real-world challenges 
-                with clean, efficient code and user-focused design.
+                with clean, efficient code and user-focused design. 
               </p>
 
               <p>
-                Beyond coding, I stay active through MMA training 
+                Beyond coding, I stay active by going for runs, i also like reading classic literature, Business & Economics,  
                 and enjoy strategic games like chess and Tekken 8.
               </p>
             </div>

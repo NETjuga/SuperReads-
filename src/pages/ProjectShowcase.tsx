@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Smartphone, Code, Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import chapDemoVideo from '../ProjectAssets/ChapDemoVideo.mov';
+
 
 const ProjectShowcase = () => {
   const [visible, setVisible] = useState(false);
@@ -74,7 +76,12 @@ const ProjectShowcase = () => {
               <div className="w-32 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto" />
               
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Advanced library platform promoting cognitive enhancement through strategic reading protocols and genre discovery algorithms.
+                Chapterly is a Library and reading tracking app which makes keeping track of reading habits and discovering new books frictionless, this app has everything a user would need
+                for their reading needs and has a simple user-frendly UI unlike other apps on the market which either aren't up to par (they suck) or have most features behind a paywall.
+              </p>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                I made Chapterly because i realised i had a problem, i realised that i wanted to keep track of what i was reading, how often i was reading and i wanted to have something that would keep me consistently reading the way Duolingo keeps me consistently learning a language.
+                When i searched for good apps i couldn't find any that were simple, free and had all the features i needed, which is why i created Chapterly.
               </p>
             </div>
           </section>
@@ -94,9 +101,14 @@ const ProjectShowcase = () => {
                 <div className="space-y-4">
                   <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <Smartphone className="w-12 h-12 text-muted-foreground mx-auto" />
+                    <img 
+                      src="/src/ProjectAssets/ChapSS1.jpg" 
+                      alt="Library View" 
+                      className="w-full h-full object-cover rounded-lg" 
+                    />
+
                       <p className="text-sm text-muted-foreground">Screenshot 1</p>
-                      <p className="text-xs font-mono text-accent">LIBRARY VIEW</p>
+                      <p className="text-xs font-mono text-accent">Library View</p>
                     </div>
                   </div>
                 </div>
@@ -104,9 +116,13 @@ const ProjectShowcase = () => {
                 <div className="space-y-4">
                   <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <Smartphone className="w-12 h-12 text-muted-foreground mx-auto" />
+                    <img 
+                      src="/src/ProjectAssets/ChapSS2.jpg" 
+                      alt="Library View" 
+                      className="w-full h-full object-cover rounded-lg" 
+                    />
                       <p className="text-sm text-muted-foreground">Screenshot 2</p>
-                      <p className="text-xs font-mono text-accent">READING PROGRESS</p>
+                      <p className="text-xs font-mono text-accent">Book Recommendation Algorithm</p>
                     </div>
                   </div>
                 </div>
@@ -114,28 +130,78 @@ const ProjectShowcase = () => {
                 <div className="space-y-4">
                   <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                      <Smartphone className="w-12 h-12 text-muted-foreground mx-auto" />
+                    <img 
+                      src="/src/ProjectAssets/ChapSS3.jpg" 
+                      alt="Library View" 
+                      className="w-full h-full object-cover rounded-lg" 
+                    />
                       <p className="text-sm text-muted-foreground">Screenshot 3</p>
-                      <p className="text-xs font-mono text-accent">RECOMMENDATIONS</p>
+                      <p className="text-xs font-mono text-accent">Reading Statistics</p>
+                    </div>                   
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                    <img 
+                      src="/src/ProjectAssets/ChapSS4.jpg" 
+                      alt="Library View" 
+                      className="w-full h-full object-cover rounded-lg" 
+                    />
+                      <p className="text-sm text-muted-foreground">Screenshot 4</p>
+                      <p className="text-xs font-mono text-accent">Notes View</p>
+                    </div>                   
+                  </div>
+
+                  
+                </div>
+
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                    <img 
+                      src="/src/ProjectAssets/ChapSS5.jpg" 
+                      alt="Library View" 
+                      className="w-full h-full object-cover rounded-lg" 
+                    />
+                      <p className="text-sm text-muted-foreground">Screenshot 5</p>
+                      <p className="text-xs font-mono text-accent">Book Log</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                    <img 
+                      src="/src/ProjectAssets/ChapSS6.jpg" 
+                      alt="Library View" 
+                      className="w-full h-full object-cover rounded-lg" 
+                    />
+                      <p className="text-sm text-muted-foreground">Screenshot 6</p>
+                      <p className="text-xs font-mono text-accent">App Widgets</p>
                     </div>
                   </div>
                 </div>
               </div>
 
+              
               {/* Video Demo */}
-              <div className="text-center">
-                <div className="max-w-sm mx-auto">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-3">
-                      <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
-                        <div className="w-0 h-0 border-l-[8px] border-l-foreground border-y-[6px] border-y-transparent ml-1" />
-                      </div>
-                      <p className="text-sm text-muted-foreground">Demo Video</p>
-                      <p className="text-xs font-mono text-accent">APP WALKTHROUGH</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div className="text-center">
+  <div className="max-w-sm mx-auto">
+  <div className="aspect-[9/18] bg-card rounded-lg border border-border/30 overflow-hidden">
+  <video 
+        src={chapDemoVideo} 
+        controls 
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <p className="text-sm text-muted-foreground mt-3">Demo Video</p>
+    <p className="text-xs font-mono text-accent">APP WALKTHROUGH</p>
+  </div>
+</div>
+
             </div>
           </section>
 
@@ -168,7 +234,10 @@ const ProjectShowcase = () => {
                           Swift
                         </span>
                         <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
-                          UIKit
+                          SwiftUI
+                        </span>
+                        <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
+                          UIkit
                         </span>
                         <span className="px-2 py-1 text-xs font-mono rounded bg-secondary/50 text-secondary-foreground border border-border/30">
                           Core Data
@@ -224,8 +293,8 @@ const ProjectShowcase = () => {
                 </h3>
                 <div className="w-16 h-1 bg-accent mx-auto mb-6" />
                 <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Upcoming enhancements include social reading features, integration with e-reader platforms, 
-                  advanced analytics, and cross-platform synchronization capabilities.
+                  Upcoming enhancements include social reading features and communities so that people could have leaderboards and compete with friends on who has more reading time encouraging more reading, integration with e-reader platforms like goodreads, 
+                  advanced analytics, and cross-platform synchronization capabilities like Audible.
                 </p>
               </div>
               
