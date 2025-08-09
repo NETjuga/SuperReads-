@@ -46,9 +46,9 @@ const ContactSection = () => {
     {
       title: 'CONTACT METHODS',
       items: [
-        { label: 'Email', value: 'arslaan@example.com', icon: '📧' },
-        { label: 'LinkedIn', value: 'Professional Network', icon: '💼' },
-        { label: 'GitHub', value: 'Code Repository', icon: '🔧' }
+        { label: 'Email', value: 'arslaanjuga00@gmail.com', icon: '📧' },
+        { label: 'Number', value: '07828900832', icon: '📱' },
+        { label: 'GitHub', value: '@NETjuga', icon: '🔧' }
       ]
     },
     {
