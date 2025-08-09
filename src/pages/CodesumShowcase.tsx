@@ -2,7 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Monitor, Code, Cpu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
+// Media imports
 import codesumVid from '../ProjectAssets/CodesumVid.mov';
+import codesumSS1 from '../ProjectAssets/CodesumSS1.png';
+import codesumSS2 from '../ProjectAssets/CodesumSS2.png';
+import codesumSS3 from '../ProjectAssets/CodesumSS3.png';
 
 const CodesumShowcase = () => {
   const [visible, setVisible] = useState(false);
@@ -32,19 +37,21 @@ const CodesumShowcase = () => {
   }, []);
 
   return (
-    <div className={cn(
-      "min-h-screen bg-background text-foreground font-alliance transition-opacity duration-1000",
-      visible ? "opacity-100" : "opacity-0"
-    )}>
+    <div
+      className={cn(
+        'min-h-screen bg-background text-foreground font-alliance transition-opacity duration-1000',
+        visible ? 'opacity-100' : 'opacity-0'
+      )}
+    >
       {/* Background tactical grid */}
       <div className="fixed inset-0 intelligence-grid opacity-5 pointer-events-none" />
-      
+
       <div className="relative z-10">
         {/* Navigation */}
         <nav className="tactical-nav-bar">
           <div className="max-w-6xl mx-auto px-4 py-6">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="inline-flex items-center gap-2 tactical-button-secondary text-sm group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -55,45 +62,7 @@ const CodesumShowcase = () => {
 
         <main ref={sectionRef} className="max-w-6xl mx-auto px-4 space-y-20 pb-20">
           {/* Hero Section */}
-          <section className="pt-20 text-center fade-in-section">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <div className="w-2 h-2 bg-primary-glow rounded-full animate-pulse" />
-                <span className="text-xs font-mono text-primary-glow uppercase tracking-wider">
-                  PROJECT LIVE
-                </span>
-              </div>
-              
-              <h1 className="text-5xl md:text-6xl font-bold font-alliance text-gradient-primary">
-                CODESUM
-              </h1>
-              
-              <div className="text-lg font-mono text-accent uppercase tracking-wider">
-                CODE GENERATOR • WEB APPLICATION
-              </div>
-              
-              <div className="w-32 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto" />
-              
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-               
-
-                Codesum is an AI powered Prompt Code Generation web application for beginner programmers and for CS students who can utilise the documentation alongside the code for practice.
-              </p>
-
-              <a
-  href="https://codesum.onrender.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block mt-4 text-white font-bold relative 
-             after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white
-             after:w-full after:scale-x-0 after:origin-left after:transition-transform after:duration-300
-             hover:after:scale-x-100"
->
-  Codesum.online
-</a>
-
-            </div>
-          </section>
+          {/* ... unchanged code above ... */}
 
           {/* Media Showcase - Website Layout */}
           <section className="fade-in-section" style={{ animationDelay: '200ms' }}>
@@ -109,36 +78,38 @@ const CodesumShowcase = () => {
               <div className="space-y-8 mb-12">
                 <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                   <div className="text-center space-y-3">
-                  <img
-                     src="/src/ProjectAssets/CodesumSS1.png"
-                     alt="Code Generation Interface"
-                     className="w-full h-full object-cover"
-                   />
+                    <img
+                      src={codesumSS1}
+                      alt="Code Generation Interface"
+                      className="w-full h-full object-cover"
+                    />
                     <p className="text-lg text-muted-foreground">Code Generation Interface</p>
                     <p className="text-sm font-mono text-accent">Prompt Editor</p>
                   </div>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                    <img
-                     src="/src/ProjectAssets/CodesumSS2.png"
-                     alt="Code Generation Interface"
-                     className="w-full h-full object-cover"
-                   />
+                      <img
+                        src={codesumSS2}
+                        alt="Code Generation Interface"
+                        className="w-full h-full object-cover"
+                      />
                       <p className="text-sm text-muted-foreground">Output Dashboard</p>
-                      <p className="text-xs font-mono text-accent">Raw code, Key Functions & Explanation</p>
+                      <p className="text-xs font-mono text-accent">
+                        Raw code, Key Functions & Explanation
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 flex items-center justify-center">
                     <div className="text-center space-y-2">
-                    <img
-                     src="/src/ProjectAssets/CodesumSS3.png"
-                     alt="Code Generation Interface"
-                     className="w-full h-full object-cover"
-                   />
+                      <img
+                        src={codesumSS3}
+                        alt="Code Generation Interface"
+                        className="w-full h-full object-cover"
+                      />
                       <p className="text-sm text-muted-foreground">Documentation View</p>
                       <p className="text-xs font-mono text-accent">Codesum Help Guide</p>
                     </div>
@@ -148,21 +119,19 @@ const CodesumShowcase = () => {
 
               {/* Video Demo */}
               <div className="text-center">
-  <div className="max-w-4xl mx-auto">
-    <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 overflow-hidden">
-      <video
-        src={codesumVid}
-        controls
-        className="w-full h-full object-cover"
-      />
-    </div>
-    <p className="text-lg text-muted-foreground mt-4">Platform Demo</p>
-    <p className="text-sm font-mono text-accent">Code Generation Flow & User Implementation</p>
-  </div>
-</div>
-
+                <div className="max-w-4xl mx-auto">
+                  <div className="aspect-[16/10] bg-card rounded-lg border border-border/30 overflow-hidden">
+                    <video src={codesumVid} controls className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-lg text-muted-foreground mt-4">Platform Demo</p>
+                  <p className="text-sm font-mono text-accent">
+                    Code Generation Flow & User Implementation
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
+
 
           {/* Technical Overview */}
           <section className="fade-in-section" style={{ animationDelay: '400ms' }}>

@@ -4,6 +4,12 @@ import { ArrowLeft, Smartphone, Code, Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import chapDemoVideo from '../ProjectAssets/ChapDemoVideo.mov';
 
+import chapSS1 from '../ProjectAssets/ChapSS1.jpg';
+import chapSS2 from '../ProjectAssets/ChapSS2.jpg';
+import chapSS3 from '../ProjectAssets/ChapSS3.jpg';
+import chapSS4 from '../ProjectAssets/ChapSS4.jpg';
+import chapSS5 from '../ProjectAssets/ChapSS5.jpg';
+import chapSS6 from '../ProjectAssets/ChapSS6.jpg';
 
 const ProjectShowcase = () => {
   const [visible, setVisible] = useState(false);
@@ -87,123 +93,58 @@ const ProjectShowcase = () => {
           </section>
 
           {/* Media Showcase - Mobile App Layout */}
-          <section className="fade-in-section" style={{ animationDelay: '200ms' }}>
-            <div className="tactical-card p-8">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold font-alliance text-gradient-primary mb-4">
-                  APPLICATION INTERFACE
-                </h2>
-                <div className="w-16 h-1 bg-accent mx-auto" />
-              </div>
-
-              {/* Mobile Screenshots Grid */}
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="space-y-4">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                    <img 
-                      src="/src/ProjectAssets/ChapSS1.jpg" 
-                      alt="Library View" 
-                      className="w-full h-full object-cover rounded-lg" 
-                    />
-
-                      <p className="text-sm text-muted-foreground">Screenshot 1</p>
-                      <p className="text-xs font-mono text-accent">Library View</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                    <img 
-                      src="/src/ProjectAssets/ChapSS2.jpg" 
-                      alt="Library View" 
-                      className="w-full h-full object-cover rounded-lg" 
-                    />
-                      <p className="text-sm text-muted-foreground">Screenshot 2</p>
-                      <p className="text-xs font-mono text-accent">Book Recommendation Algorithm</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                    <img 
-                      src="/src/ProjectAssets/ChapSS3.jpg" 
-                      alt="Library View" 
-                      className="w-full h-full object-cover rounded-lg" 
-                    />
-                      <p className="text-sm text-muted-foreground">Screenshot 3</p>
-                      <p className="text-xs font-mono text-accent">Reading Statistics</p>
-                    </div>                   
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                    <img 
-                      src="/src/ProjectAssets/ChapSS4.jpg" 
-                      alt="Library View" 
-                      className="w-full h-full object-cover rounded-lg" 
-                    />
-                      <p className="text-sm text-muted-foreground">Screenshot 4</p>
-                      <p className="text-xs font-mono text-accent">Notes View</p>
-                    </div>                   
-                  </div>
-
-                  
-                </div>
-
-                <div className="space-y-4">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                    <img 
-                      src="/src/ProjectAssets/ChapSS5.jpg" 
-                      alt="Library View" 
-                      className="w-full h-full object-cover rounded-lg" 
-                    />
-                      <p className="text-sm text-muted-foreground">Screenshot 5</p>
-                      <p className="text-xs font-mono text-accent">Book Log</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                    <img 
-                      src="/src/ProjectAssets/ChapSS6.jpg" 
-                      alt="Library View" 
-                      className="w-full h-full object-cover rounded-lg" 
-                    />
-                      <p className="text-sm text-muted-foreground">Screenshot 6</p>
-                      <p className="text-xs font-mono text-accent">App Widgets</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              
-              {/* Video Demo */}
-<div className="text-center">
-  <div className="max-w-sm mx-auto">
-  <div className="aspect-[9/18] bg-card rounded-lg border border-border/30 overflow-hidden">
-  <video 
-        src={chapDemoVideo} 
-        controls 
-        className="w-full h-full object-cover"
-      />
+          // Replace the old "Media Showcase" section with this:
+<section className="fade-in-section" style={{ animationDelay: '200ms' }}>
+  <div className="tactical-card p-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold font-alliance text-gradient-primary mb-4">
+        APPLICATION INTERFACE
+      </h2>
+      <div className="w-16 h-1 bg-accent mx-auto" />
     </div>
-    <p className="text-sm text-muted-foreground mt-3">Demo Video</p>
-    <p className="text-xs font-mono text-accent">APP WALKTHROUGH</p>
-  </div>
-</div>
 
+    {/* Mobile Screenshots Grid */}
+    <div className="grid md:grid-cols-3 gap-8 mb-12">
+      {[
+        { img: chapSS1, label: 'Screenshot 1', desc: 'Library View' },
+        { img: chapSS2, label: 'Screenshot 2', desc: 'Book Recommendation Algorithm' },
+        { img: chapSS3, label: 'Screenshot 3', desc: 'Reading Statistics' },
+        { img: chapSS4, label: 'Screenshot 4', desc: 'Notes View' },
+        { img: chapSS5, label: 'Screenshot 5', desc: 'Book Log' },
+        { img: chapSS6, label: 'Screenshot 6', desc: 'App Widgets' },
+      ].map((item, idx) => (
+        <div key={idx} className="space-y-4">
+          <div className="aspect-[9/16] bg-card rounded-lg border border-border/30 flex items-center justify-center">
+            <div className="text-center space-y-2">
+              <img 
+                src={item.img} 
+                alt={item.desc} 
+                className="w-full h-full object-cover rounded-lg" 
+              />
+              <p className="text-sm text-muted-foreground">{item.label}</p>
+              <p className="text-xs font-mono text-accent">{item.desc}</p>
             </div>
-          </section>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Video Demo */}
+    <div className="text-center">
+      <div className="max-w-sm mx-auto">
+        <div className="aspect-[9/18] bg-card rounded-lg border border-border/30 overflow-hidden">
+          <video 
+            src={chapDemoVideo} 
+            controls 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <p className="text-sm text-muted-foreground mt-3">Demo Video</p>
+        <p className="text-xs font-mono text-accent">APP WALKTHROUGH</p>
+      </div>
+    </div>
+  </div>
+</section>
 
           {/* Technical Overview */}
           <section className="fade-in-section" style={{ animationDelay: '400ms' }}>
