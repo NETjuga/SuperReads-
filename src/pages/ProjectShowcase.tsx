@@ -93,7 +93,7 @@ const ProjectShowcase = () => {
           </section>
 
           {/* Media Showcase - Mobile App Layout */}
-          // Replace the old "Media Showcase" section with this:
+
 <section className="fade-in-section" style={{ animationDelay: '200ms' }}>
   <div className="tactical-card p-8">
     <div className="text-center mb-12">
