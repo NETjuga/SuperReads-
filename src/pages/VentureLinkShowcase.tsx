@@ -168,10 +168,6 @@ const VentureLinkShowcase = () => {
               We're building a space that feels light-hearted and fun while maintaining the professionalism needed for 
               serious business connections. Our goal is to remove barriers and create opportunities for visionary founders 
               to connect with forward-thinking investors.
-
-              Venture Capital firms like Y-Combinator have quartely windows in which you can apply which means youre limited to a deadline. Having an idea is great but most people are limited by a lack of technical, motivated and driven
-              peers in their social circle, Venture Capital dishes out millions to select start ups but some people might not need to start slow. A rocket doesn't shoot up into orbit, a rocket starts slow, gains momentum, accelerates, and then 
-              is in orbit. With VentureLink i hope to aim for a platform that elimates a persons limit of like minded people not being around, money being an issue and i most of all hope to elimiate the friction between starting something ant taking that risk. 
             </p>
           </div>
         </section>
@@ -181,6 +177,15 @@ const VentureLinkShowcase = () => {
           <div className="text-center mb-12 fade-in-section">
             <h2 className="text-4xl font-bold text-gradient-primary mb-4">DEVELOPMENT ROADMAP</h2>
             <p className="text-muted-foreground">Current progress and upcoming milestones</p>
+            <Link 
+              to="/VLvisualise" 
+              className="tactical-button mt-6 inline-flex items-center space-x-2"
+            >
+              <span>VISUALISE</span>
+              <div className="w-4 h-4 border border-current rounded-sm flex items-center justify-center">
+                <div className="w-1.5 h-1.5 bg-current rounded-full"></div>
+              </div>
+            </Link>
           </div>
 
           <div className="space-y-8">

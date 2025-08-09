@@ -8,6 +8,7 @@ import ProjectShowcase from "./pages/ProjectShowcase";
 import CodesumShowcase from "./pages/CodesumShowcase";
 import StudentShowcase from "./pages/StudentShowcase";
 import VentureLinkShowcase from "./pages/VentureLinkShowcase";
+import VLvisualise from "./pages/VLvisualise"
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/CodesumShowcase" element={<CodesumShowcase />} />
           <Route path="/StudentShowcase" element={<StudentShowcase />} />
           <Route path="/VentureLinkShowcase" element={<VentureLinkShowcase />} />
+          <Route path="/VLvisualise" element={<VLvisualise />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
