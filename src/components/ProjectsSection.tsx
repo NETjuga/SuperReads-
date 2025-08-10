@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       title: 'CHAPTERLY',
       classification: 'LIBRARY PLATFORM',
       description:
-        'Advanced library platform promoting cognitive enhancement through strategic reading protocols and genre discovery algorithms.',
+        'Advanced library platform promoting consistent reading through strategic reading statistics and genre discovery algorithms to help users maintain a habit of reading.',
       technologies: ['React', 'Node.js', 'APIs'],
       status: 'COMPLETED',
       delay: '0ms',
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       title: 'STUDENTWIRE',
       classification: 'COMMUNICATION PLATFORM',
       description:
-        'Educational communication platform designed for clarity and strategic knowledge dissemination.',
+        'A personalised career guidance platform designed for students and graduates, helping them make informed decisions about their future with advice tailored to their needs, not generic counselling.',
       technologies: ['Full-Stack', 'Real-time', 'Security'],
       status: 'BETA',
       delay: '400ms',
