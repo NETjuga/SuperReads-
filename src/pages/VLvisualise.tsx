@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
+import VLmockup from '../ProjectAssets/VLmockup.jpg';
+import VLfirstmock from '../ProjectAssets/VLfirstmock.png';
+import VLnewmock from '../ProjectAssets/VLnewmock.jpg';
+import VLaugust11VIDEO from '../ProjectAssets/VLaugust11VIDEO.mov'
+
 const VLvisualise = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -33,29 +38,41 @@ const VLvisualise = () => {
   const timelineData = [
     {
       id: 1,
-      date: "January 2025",
+      date: "August 1st 2025",
       title: "Initial UI Mockup",
-      description: "First conceptual design and user interface wireframes for the VentureLink platform.",
+      description: "First concept lol, love miro. This is very rough looking but this is at a point where VentureLink is just an idea i'm playing with, might persue it, it definitely solves a big problem.",
       type: "image",
-      src: "/placeholder-mockup.jpg", // Replace with actual image path
-      alt: "VentureLink UI Mockup"
+      src: VLmockup, // Replace with actual image path
+      alt: "VentureLink UI Mockup",
+      aspect: "pc"
     },
     {
       id: 2,
-      date: "February 2025",
+      date: "August 1st 2025",
       title: "First App Screenshot",
-      description: "Early development screenshots showing core functionality and initial user interface implementation.",
+      description: "This initial design is a quick mock of what i made on miro, its inspired by the app Minnect by Patrick Bet David, his app is great, but as you can probably see it looks horrible.",
       type: "image",
-      src: "/placeholder-screenshot.jpg", // Replace with actual image path
-      alt: "VentureLink First Screenshot"
+      src: VLfirstmock, // Replace with actual image path
+      alt: "VentureLink First Screenshot",
+      aspect: "iphone"
+    },
+    {
+      id: 2,
+      date: "August 9th 2025",
+      title: "First App Screenshot",
+      description: "This colour scheme is good, i've done the main page now, very buggy but its coming together in terms of UI, Data-Models and User flow.",
+      type: "image",
+      src: VLnewmock, // Replace with actual image path
+      alt: "VentureLink First Screenshot",
+      aspect: "iphone"
     },
     {
       id: 3,
-      date: "March 2025",
-      title: "MVP Demo Video",
-      description: "First working prototype demonstration showcasing user onboarding and basic matching features.",
+      date: "August 11th 2025",
+      title: "First Demo Video",
+      description: "First working prototype demonstration of the UI and UserFlow of the app, i think i really like the colour palette and UI so far and after making some small tweaks my focus is going to shift to creating the database and the side of the UserFlow for the Investors which is going to be quite complex but won't be too much of an issue to create.",
       type: "video",
-      src: "/placeholder-video.mp4", // Replace with actual video path
+      src: VLaugust11VIDEO, // Replace with actual video path
       alt: "VentureLink MVP Demo"
     },
     {
@@ -169,24 +186,36 @@ const VLvisualise = () => {
                           </div>
                         </div>
                       ) : item.type === "video" ? (
-                        <div className="aspect-video bg-secondary/30 rounded-lg overflow-hidden border border-border/30">
-                          <video 
-                            controls 
-                            className="w-full h-full object-cover"
-                            poster="/placeholder-video-poster.jpg"
-                          >
-                            <source src={item.src} type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </video>
-                        </div>
+                        <div className="flex justify-center">
+  <div className="aspect-[9/19.5] max-w-xs w-full bg-secondary/30 rounded-lg overflow-hidden border border-border/30">
+    <video
+      controls
+      className="w-full h-full object-cover"
+      poster="/placeholder-video-poster.jpg"
+    >
+      <source src={item.src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
                       ) : (
-                        <div className="aspect-video bg-secondary/30 rounded-lg overflow-hidden border border-border/30">
-                          <img 
-                            src={item.src} 
+                        <div className="flex justify-center">
+                        <div
+                          className={cn(
+                            item.aspect === "iphone" ? "aspect-[9/19.5]" : "aspect-video",
+                            "max-w-xs w-full bg-secondary/30 rounded-lg overflow-hidden border border-border/30"
+                          )}
+                        >
+                          <img
+                            src={item.src}
                             alt={item.alt}
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                           />
                         </div>
+                      </div>
+                      
+
                       )}
                     </div>
                   </div>
