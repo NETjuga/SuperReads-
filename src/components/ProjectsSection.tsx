@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       title: 'CHAPTERLY',
       classification: 'LIBRARY PLATFORM',
       description:
-        'Advanced library platform promoting consistent reading through strategic reading statistics and genre discovery algorithms to help users maintain a habit of reading.',
+        'Advanced library platform promoting cognitive enhancement through strategic reading protocols and genre discovery algorithms.',
       technologies: ['React', 'Node.js', 'APIs'],
       status: 'COMPLETED',
       delay: '0ms',
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       title: 'STUDENTWIRE',
       classification: 'COMMUNICATION PLATFORM',
       description:
-        'A personalised career guidance platform designed for students and graduates, helping them make informed decisions about their future with advice tailored to their needs, not generic counselling.',
+        'Educational communication platform designed for clarity and strategic knowledge dissemination.',
       technologies: ['Full-Stack', 'Real-time', 'Security'],
       status: 'BETA',
       delay: '400ms',
@@ -59,15 +59,15 @@ const ProjectsSection = () => {
       isExternal: false,
     },
     {
-      title: 'FOOTPRINT.ONLINE',
+      title: 'CYBERSKOPE',
       classification: 'CYBERSECURITY PLATFORM',
       description:
-        'Comprehensive cybersecurity platform providing advanced threat detection and digital footprint analysis.',
-      technologies: ['Security', 'Analytics', 'Monitoring'],
+        'AI-powered cybersecurity platform providing advanced threat detection and comprehensive digital footprint analysis.',
+      technologies: ['AI', 'Security', 'Analytics'],
       status: 'ACTIVE',
       delay: '600ms',
-      route: '',
-      isExternal: true,
+      route: '/CyberShowcase',
+      isExternal: false,
     },
     {
       title: 'PWROUT',
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
       technologies: ['Shopify', 'E-commerce', 'Design'],
       status: 'LIVE',
       delay: '800ms',
-      route: 'https://pwrout.store',
+      route: 'https://pwrout.com',
       isExternal: true,
     },
   ];
