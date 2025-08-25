@@ -72,8 +72,8 @@ const CyberShowcase = () => {
                 <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
                   CyberSkope represents the next generation of cybersecurity platforms, 
                   leveraging advanced artificial intelligence to provide comprehensive 
-                  threat detection and digital footprint analysis. Built with cutting-edge 
-                  technology to protect organizations from evolving cyber threats.
+                  threat detection and digital footprint analysis. Built 
+                  to protect organizations from evolving or present cyber threats, with an end goal of this project being to create an API which acts as a 24/7 cyber security agent for organisations.
                 </p>
                 
                 <a 
@@ -94,7 +94,7 @@ const CyberShowcase = () => {
           {/* Key Features */}
           <section className="container mx-auto px-6 py-20">
             <div className="text-center mb-12 fade-in-section">
-              <h2 className="text-4xl font-bold text-gradient-primary mb-4">KEY FEATURES</h2>
+              <h2 className="text-4xl font-bold text-gradient-primary mb-4">API KEY FEATURES</h2>
               <p className="text-muted-foreground">Advanced AI-driven security capabilities</p>
             </div>
 
@@ -129,7 +129,7 @@ const CyberShowcase = () => {
           <section className="container mx-auto px-6 py-20">
             <div className="text-center mb-12 fade-in-section">
               <h2 className="text-4xl font-bold text-gradient-primary mb-4">TECHNOLOGY STACK</h2>
-              <p className="text-muted-foreground">Built with cutting-edge technologies</p>
+              <p className="text-muted-foreground">Built with the most efficent and reliable technologies</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
